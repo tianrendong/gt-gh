@@ -1,6 +1,6 @@
 {
   "name": "gt-gh",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "GitHub-only stacked changes CLI compatible with Graphite-style gt commands.",
   "license": "AGPL-3.0-only",
   "main": "dist/src/index.js",
@@ -69,8 +69,7 @@
     "README.md"
   ],
   "bin": {
-    "gt": "dist/src/index.js",
-    "gt-gh": "dist/src/index.js"
+    "gt": "dist/src/index.js"
   },
   "engines": {
     "node": ">=18"

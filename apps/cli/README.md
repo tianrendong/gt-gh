@@ -14,12 +14,6 @@ Then run:
 gt --help
 ```
 
-If you already have another `gt` binary installed, use the package-specific binary:
-
-```bash
-gt-gh --help
-```
-
 ## Quick start
 
 ```bash
