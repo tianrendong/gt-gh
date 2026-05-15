@@ -5,7 +5,7 @@ import { graphite } from '../lib/runner';
 const args = {
   all: {
     describe:
-      'Sync branches across all configured trunks. Graphite has one trunk; accepted as no-op.',
+      'Sync branches across all configured trunks. this CLI supports one trunk; accepted as no-op.',
     type: 'boolean',
     default: false,
     alias: 'a',

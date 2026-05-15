@@ -10,7 +10,7 @@ export async function getAction(
   context: TContext
 ): Promise<void> {
   context.splog.message(
-    '⚠️ This command is not not yet implemented in Graphite :-( \n\nPlease check out the issue on GitHub https://github.com/tianrendong/gt-gh/issues/6'
+    '⚠️ This command is not yet implemented in this GitHub-only Graphite CLI.\n\nPlease check out the issue on GitHub https://github.com/tianrendong/gt-gh/issues/6'
   );
 }
 

@@ -12,7 +12,7 @@ const args = {
   },
   all: {
     describe:
-      'Show branches across all configured trunks. Graphite has one trunk; accepted as no-op.',
+      'Show branches across all configured trunks. this CLI supports one trunk; accepted as no-op.',
     type: 'boolean',
     default: false,
     alias: 'a',

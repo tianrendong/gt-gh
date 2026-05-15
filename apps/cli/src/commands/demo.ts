@@ -79,7 +79,7 @@ export const handler = async (argv: argsT): Promise<void> => {
       'remote',
       'add',
       'origin',
-      'git@github.com:withgraphite/graphite-demo-repo.git',
+      'git@github.com:tianrendong/gt-gh-demo-repo.git',
     ]);
 
     repo.runGitCommand(['push', 'origin', 'main', '-f']);

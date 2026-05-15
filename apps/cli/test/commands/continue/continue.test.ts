@@ -51,7 +51,7 @@ for (const scene of allScenes) {
       });
     });
 
-    describe('During a Grahite initiated rebase', function () {
+    describe('During a Graphite-initiated rebase', function () {
       beforeEach(function () {
         scene.repo.checkoutBranch('b');
         expect(() => scene.repo.runCliCommand(['stack', 'restack'])).to.throw();

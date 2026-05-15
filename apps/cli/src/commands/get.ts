@@ -23,7 +23,7 @@ const args = {
     default: false,
   },
   downstack: {
-    describe: `Don't sync upstack branches. Graphite get is downstack-only.`,
+    describe: `Don't sync upstack branches. gt get is downstack-only.`,
     type: 'boolean',
     default: false,
     alias: 'd',

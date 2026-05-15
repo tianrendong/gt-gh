@@ -53,13 +53,13 @@ const args = {
     alias: 'o',
   },
   ai: {
-    describe: `Graphite AI branch/message generation is not supported by Graphite.`,
+    describe: `Graphite AI branch/message generation is not supported by this GitHub-only CLI.`,
     demandOption: false,
     default: false,
     type: 'boolean',
   },
   'no-ai': {
-    describe: `No-op compatibility flag; Graphite never uses Graphite AI.`,
+    describe: `No-op compatibility flag; this GitHub-only CLI never uses Graphite AI.`,
     demandOption: false,
     default: false,
     type: 'boolean',
@@ -84,7 +84,7 @@ export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {
     if (argv.ai) {
       throw new ExitFailedError(
-        'Graphite does not support Graphite AI branch/message generation. Use --message or omit --ai.'
+        'This GitHub-only CLI does not support Graphite AI branch/message generation. Use --message or omit --ai.'
       );
     }
     if (argv.verbose) {

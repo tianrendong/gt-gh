@@ -11,39 +11,39 @@ for (const scene of [new BasicScene()]) {
 
     it('Can infer cloned repos', () => {
       const match = getOwnerAndNameFromURL(
-        'https://github.com/withgraphite/graphite-cli.git'
+        'https://github.com/tianrendong/gt-gh.git'
       );
       if (match === null) {
         expect.fail('Match should not be null');
       }
       const { owner, name } = match;
 
-      expect(owner === 'withgraphite').to.be.true;
-      expect(name === 'graphite-cli').to.be.true;
+      expect(owner === 'tianrendong').to.be.true;
+      expect(name === 'gt-gh').to.be.true;
     });
 
     it('Can infer SSH cloned repos', () => {
       const match = getOwnerAndNameFromURL(
-        'git@github.com:withgraphite/graphite-cli.git'
+        'git@github.com:tianrendong/gt-gh.git'
       );
       if (match === null) {
         expect.fail('Match should not be null');
       }
       const { owner, name } = match;
-      expect(owner === 'withgraphite').to.be.true;
-      expect(name === 'graphite-cli').to.be.true;
+      expect(owner === 'tianrendong').to.be.true;
+      expect(name === 'gt-gh').to.be.true;
     });
 
     it('Can infer SSH cloned repos (with git@ configured separately)', () => {
       const match = getOwnerAndNameFromURL(
-        'github.com/withgraphite/graphite-cli.git'
+        'github.com/tianrendong/gt-gh.git'
       );
       if (match === null) {
         expect.fail('Match should not be null');
       }
       const { owner, name } = match;
-      expect(owner === 'withgraphite').to.be.true;
-      expect(name === 'graphite-cli').to.be.true;
+      expect(owner === 'tianrendong').to.be.true;
+      expect(name === 'gt-gh').to.be.true;
     });
 
     it('Can read the existing repo config when executing from a subfolder in the project', () => {
@@ -59,22 +59,22 @@ for (const scene of [new BasicScene()]) {
     // them.
     it('Can infer cloned repos without .git', () => {
       const clone = getOwnerAndNameFromURL(
-        'https://github.com/withgraphite/graphite-cli'
+        'https://github.com/tianrendong/gt-gh'
       );
       if (clone === null) {
         expect.fail('Match should not be null');
       }
-      expect(clone.owner === 'withgraphite').to.be.true;
-      expect(clone.name === 'graphite-cli').to.be.true;
+      expect(clone.owner === 'tianrendong').to.be.true;
+      expect(clone.name === 'gt-gh').to.be.true;
 
       const sshClone = getOwnerAndNameFromURL(
-        'git@github.com:withgraphite/graphite-cli'
+        'git@github.com:tianrendong/gt-gh'
       );
       if (sshClone === null) {
         expect.fail('Match should not be null');
       }
-      expect(sshClone.owner === 'withgraphite').to.be.true;
-      expect(sshClone.name === 'graphite-cli').to.be.true;
+      expect(sshClone.owner === 'tianrendong').to.be.true;
+      expect(sshClone.name === 'gt-gh').to.be.true;
     });
   });
 }

@@ -4,12 +4,12 @@ import { graphite } from '../lib/runner';
 const args = {
   add: {
     describe:
-      'Add an additional trunk. Multiple trunks are not supported by Graphite.',
+      'Add an additional trunk. Multiple trunks are not supported by this GitHub-only CLI.',
     type: 'boolean',
     default: false,
   },
   all: {
-    describe: 'Show all configured trunks. Graphite has one trunk.',
+    describe: 'Show all configured trunks. this CLI supports one trunk.',
     type: 'boolean',
     default: false,
     alias: 'a',

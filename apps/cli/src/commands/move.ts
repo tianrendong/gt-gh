@@ -8,7 +8,7 @@ import { graphite } from '../lib/runner';
 const args = {
   all: {
     describe:
-      'Show branches across all configured trunks in interactive selection. Graphite has one trunk.',
+      'Show branches across all configured trunks in interactive selection. this CLI supports one trunk.',
     type: 'boolean',
     default: false,
     alias: 'a',

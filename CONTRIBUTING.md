@@ -76,7 +76,7 @@ gt <command>
 
 ## Generating the MacOS ARM Binary
 
-Due to limitations with Github actions, we need to manually generate the MacOS ARM binary for a release.
+Due to limitations with GitHub Actions, we need to manually generate the MacOS ARM binary for a release.
 
 From the cli app directory:
 

@@ -22,12 +22,13 @@ const args = {
   },
   ai: {
     describe:
-      'Graphite AI PR metadata generation is not supported by Graphite.',
+      'Graphite AI PR metadata generation is not supported by this GitHub-only CLI.',
     type: 'boolean',
     default: false,
   },
   'no-ai': {
-    describe: 'No-op compatibility flag; Graphite never uses Graphite AI.',
+    describe:
+      'No-op compatibility flag; this GitHub-only CLI never uses Graphite AI.',
     type: 'boolean',
     default: false,
   },
@@ -38,7 +39,8 @@ const args = {
     default: false,
   },
   web: {
-    describe: 'Graphite web PR metadata editing is not supported by Graphite.',
+    describe:
+      'Graphite web PR metadata editing is not supported by this GitHub-only CLI.',
     type: 'boolean',
     default: false,
     alias: 'w',
@@ -64,11 +66,13 @@ const args = {
     default: false,
   },
   comment: {
-    describe: 'Adding submit comments is not supported by Graphite.',
+    describe:
+      'Adding submit comments is not supported by this GitHub-only CLI.',
     type: 'string',
   },
   'merge-when-ready': {
-    describe: 'Graphite merge-when-ready is not supported by Graphite.',
+    describe:
+      'Graphite merge-when-ready is not supported by this GitHub-only CLI.',
     type: 'boolean',
     default: false,
     alias: 'm',
@@ -79,18 +83,19 @@ const args = {
     alias: 't',
   },
   'rerequest-review': {
-    describe: 'Rerequesting reviews is not supported by Graphite.',
+    describe: 'Rerequesting reviews is not supported by this GitHub-only CLI.',
     type: 'boolean',
     default: false,
   },
   restack: {
     describe:
-      'Restack branches before submitting. Graphite already validates stack state.',
+      'Restack branches before submitting. This CLI already validates stack state.',
     type: 'boolean',
     default: false,
   },
   'target-trunk': {
-    describe: 'Multiple target trunks are not supported by Graphite.',
+    describe:
+      'Multiple target trunks are not supported by this GitHub-only CLI.',
     type: 'string',
   },
   'ignore-out-of-sync-trunk': {
@@ -113,7 +118,7 @@ export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {
     if (argv.ai) {
       throw new ExitFailedError(
-        'Graphite does not support Graphite AI PR metadata generation.'
+        'This GitHub-only CLI does not support Graphite AI PR metadata generation.'
       );
     }
     if (argv.web) {
@@ -126,7 +131,7 @@ export const handler = async (argv: argsT): Promise<void> =>
     }
     if (argv['merge-when-ready']) {
       throw new ExitFailedError(
-        'Graphite does not support Graphite merge-when-ready.'
+        'This GitHub-only CLI does not support Graphite merge-when-ready.'
       );
     }
     if (argv['rerequest-review']) {
