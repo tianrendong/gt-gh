@@ -1,10 +1,10 @@
-import { API_ROUTES } from '@withgraphite/graphite-cli-routes';
-import * as t from '@withgraphite/retype';
+import { prInfoToUpsertSchema } from '../api/pr_info';
+import * as t from '../retype';
 import { spiffy } from './spiffy';
 
 export const prInfoConfigFactory = spiffy({
   schema: t.shape({
-    prInfoToUpsert: API_ROUTES.pullRequestInfo.response.prs,
+    prInfoToUpsert: prInfoToUpsertSchema,
   }),
   defaultLocations: [
     {

@@ -1,16 +1,38 @@
-import { API_ROUTES } from '@withgraphite/graphite-cli-routes';
-
-import t from '@withgraphite/retype';
 import { execFileSync } from 'child_process';
+import * as t from '../retype';
+
+const reviewDecisionSchema = t.optional(
+  t.unionMany([
+    t.literal('APPROVED' as const),
+    t.literal('REVIEW_REQUIRED' as const),
+    t.literal('CHANGES_REQUESTED' as const),
+  ])
+);
+
+export const prInfoToUpsertSchema = t.array(
+  t.shape({
+    state: t.unionMany([
+      t.literal('OPEN' as const),
+      t.literal('MERGED' as const),
+      t.literal('CLOSED' as const),
+    ]),
+    url: t.string,
+    title: t.string,
+    body: t.string,
+    prNumber: t.number,
+    headRefName: t.string,
+    baseRefName: t.string,
+    reviewDecision: reviewDecisionSchema,
+    isDraft: t.boolean,
+  })
+);
+
+export type TPRInfoToUpsert = t.TypeOf<typeof prInfoToUpsertSchema>;
 
 type TBranchNameWithPrNumber = {
   branchName: string;
   prNumber: number | undefined;
 };
-
-export type TPRInfoToUpsert = t.UnwrapSchemaMap<
-  typeof API_ROUTES.pullRequestInfo.response
->['prs'];
 
 export async function getPrInfoForBranches(
   branchNamesWithExistingPrInfo: TBranchNameWithPrNumber[]
@@ -53,7 +75,9 @@ export async function getPrInfoForBranches(
           pr.reviewDecision = undefined;
         }
 
-        response.push(pr);
+        if (prInfoToUpsertSchema([pr])) {
+          response.push(pr);
+        }
       } catch (error) {
         if (
           error instanceof Error &&
@@ -80,8 +104,7 @@ export async function getPrInfoForBranches(
       return shouldAssociatePrWithBranch || shouldUpdateExistingBranch;
     });
   } catch {
-    // Not really sure why this pattern was accepted but when this used the
-    // Graphite API they'd just return an empty array if the request failed.
+    // Preserve old behavior: if remote PR lookup fails, continue without PR info.
     return [];
   }
 }

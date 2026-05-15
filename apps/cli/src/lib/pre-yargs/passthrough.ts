@@ -31,7 +31,6 @@ const GIT_COMMAND_ALLOWLIST = [
   'request-pull',
   'reset',
   'restore',
-  'revert',
   'rm',
   'show',
   'send-email',

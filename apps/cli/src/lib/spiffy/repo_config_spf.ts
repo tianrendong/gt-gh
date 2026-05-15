@@ -1,4 +1,4 @@
-import * as t from '@withgraphite/retype';
+import * as t from '../retype';
 import { ExitFailedError } from '../errors';
 import { runGitCommand } from '../git/runner';
 import { spiffy } from './spiffy';

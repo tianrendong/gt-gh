@@ -1,4 +1,4 @@
-import * as t from '@withgraphite/retype';
+import * as t from '../retype';
 import { spiffy } from './spiffy';
 
 /**

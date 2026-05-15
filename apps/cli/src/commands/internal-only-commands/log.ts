@@ -1,4 +1,4 @@
-import { BranchInfo } from '@danerwilliams/gti-cli-shared-types';
+import type { BranchInfo } from '../../lib/cli_shared_types';
 import yargs from 'yargs';
 import { TContext } from '../../lib/context';
 import { UntrackedBranchError } from '../../lib/errors';

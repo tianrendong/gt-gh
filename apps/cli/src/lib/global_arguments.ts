@@ -26,6 +26,17 @@ export const globalArgumentsOptions = {
     demandOption: false,
     description: 'Display debug output.',
   },
+  cwd: {
+    type: 'string',
+    demandOption: false,
+    description: 'Working directory in which to perform operations.',
+  },
+  allCommands: {
+    type: 'boolean',
+    demandOption: false,
+    hidden: true,
+    description: 'Print the full list of command help.',
+  },
 } as const;
 
 export type TGlobalArguments = Partial<

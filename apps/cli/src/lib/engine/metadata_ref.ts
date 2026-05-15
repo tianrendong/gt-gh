@@ -1,4 +1,4 @@
-import * as t from '@withgraphite/retype';
+import * as t from '../retype';
 import { cuteString } from '../utils/cute_string';
 import { runGitCommand, runGitCommandAndSplitLines } from '../git/runner';
 

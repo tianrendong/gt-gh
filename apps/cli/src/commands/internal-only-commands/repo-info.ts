@@ -1,6 +1,6 @@
 import yargs from 'yargs';
 import { graphite } from '../../lib/runner';
-import { RepoInfo } from '@danerwilliams/gti-cli-shared-types';
+import type { RepoInfo } from '../../lib/cli_shared_types';
 import {
   currentGitRepoPrecondition,
   getRepoRootPathPrecondition,

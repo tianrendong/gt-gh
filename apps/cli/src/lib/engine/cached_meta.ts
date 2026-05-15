@@ -1,4 +1,4 @@
-import * as t from '@withgraphite/retype';
+import * as t from '../retype';
 import { BadTrunkOperationError, UntrackedBranchError } from '../errors';
 import { prInfoSchema } from './metadata_ref';
 

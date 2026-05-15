@@ -16,6 +16,11 @@ if (!process.env.DEBUG) {
 // https://www.npmjs.com/package/tmp#graceful-cleanup
 tmp.setGracefulCleanup();
 
+const cwdIndex = process.argv.indexOf('--cwd');
+if (cwdIndex >= 0 && process.argv[cwdIndex + 1]) {
+  process.chdir(process.argv[cwdIndex + 1]);
+}
+
 process.on('uncaughtException', (err) => {
   console.log(chalk.redBright(`UNCAUGHT EXCEPTION: ${err.message}`));
   console.log(chalk.redBright(`UNCAUGHT EXCEPTION: ${err.stack}`));

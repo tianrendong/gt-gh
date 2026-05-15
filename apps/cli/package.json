@@ -1,16 +1,25 @@
 {
-  "name": "@danerwilliams/charcoal",
-  "version": "0.2.4",
-  "license": "None",
+  "name": "gt-gh",
+  "version": "0.1.0",
+  "description": "GitHub-only stacked changes CLI compatible with Graphite-style gt commands.",
+  "license": "AGPL-3.0-only",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
-  "homepage": "https://github.com/danerwilliams/charcoal",
-  "repository": "github:danerwilliams/charcoal",
+  "homepage": "https://github.com/tianrendong/gt-gh",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tianrendong/gt-gh.git"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "graphite",
+    "gt",
+    "stacked-prs",
+    "stacked-diffs",
+    "stacked-changes"
+  ],
   "dependencies": {
-    "@danerwilliams/gti-cli-shared-types": "workspace:*",
-    "@withgraphite/graphite-cli-routes": "^0.31.0",
-    "@withgraphite/retype": "^0.3.11",
-    "@withgraphite/retyped-routes": "^0.3.1",
     "chalk": "^4.1.2",
     "fast-json-stable-hash": "^1.0.3",
     "fs-extra": "^10.1.0",
@@ -36,7 +45,8 @@
     "access": "public"
   },
   "scripts": {
-    "prepublishOnly": "yarn build",
+    "prepack": "corepack yarn build",
+    "prepublishOnly": "corepack yarn build",
     "postinstall": "node scripts/node_version.js || node dist/scripts/node_version.js",
     "lint": "eslint src --quiet --ext .ts --cache",
     "check": "tsc --noEmit",
@@ -53,11 +63,17 @@
     "exclude": ".yarn/**/*"
   },
   "files": [
-    "dist"
+    "dist/src",
+    "dist/scripts",
+    "dist/package.json",
+    "README.md"
   ],
   "bin": {
-    "graphite": "dist/src/index.js",
-    "gt": "dist/src/index.js"
+    "gt": "dist/src/index.js",
+    "gt-gh": "dist/src/index.js"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "devDependencies": {
     "@types/chai": "^4.3.1",

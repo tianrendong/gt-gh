@@ -1,20 +1,42 @@
-import { API_ROUTES } from '@withgraphite/graphite-cli-routes';
-import * as t from '@withgraphite/retype';
+import { execFileSync } from 'child_process';
 import chalk from 'chalk';
 import { TContext } from '../../lib/context';
 import { ExitFailedError } from '../../lib/errors';
 import { Unpacked } from '../../lib/utils/ts_helpers';
-import { execFileSync } from 'child_process';
 
-export type TPRSubmissionInfo = t.UnwrapSchemaMap<
-  typeof API_ROUTES.submitPullRequests.params
->['prs'];
+export type TPRSubmissionInfo = Array<
+  {
+    head: string;
+    headSha: string;
+    base: string;
+    baseSha: string;
+    title?: string;
+    body?: string;
+    reviewers: string[];
+    draft?: boolean;
+  } & (
+    | {
+        action: 'create';
+        title: string;
+        body: string;
+        draft: boolean;
+      }
+    | {
+        action: 'update';
+        prNumber: number;
+      }
+  )
+>;
 
 type TSubmittedPRRequest = Unpacked<TPRSubmissionInfo>;
 
-type TSubmittedPRResponse = Unpacked<
-  t.UnwrapSchemaMap<typeof API_ROUTES.submitPullRequests.response>['prs']
->;
+type TSubmittedPRResponse = {
+  head: string;
+  status: 'created' | 'updated' | 'error';
+  prNumber?: number;
+  prURL?: string;
+  error?: string;
+};
 
 type TSubmittedPR = {
   request: TSubmittedPRRequest;
@@ -44,16 +66,19 @@ export async function submitPullRequest(
       ? {
           title: pr.request.title,
           body: pr.request.body,
-          reviewDecision: 'REVIEW_REQUIRED', // Because we just opened this PR
+          reviewDecision: 'REVIEW_REQUIRED' as const, // Because we just opened this PR
         }
       : {}),
     ...(pr.request.draft !== undefined ? { draft: pr.request.draft } : {}),
   });
   context.splog.info(
-    `${chalk.green(pr.response.head)}: ${pr.response.prURL} (${{
-      updated: chalk.yellow,
-      created: chalk.green,
-    }[pr.response.status](pr.response.status)})`
+    `${chalk.green(pr.response.head)}: ${pr.response.prURL} (${(
+      {
+        updated: chalk.yellow,
+        created: chalk.green,
+        error: chalk.red,
+      } as const
+    )[pr.response.status](pr.response.status)})`
   );
 }
 

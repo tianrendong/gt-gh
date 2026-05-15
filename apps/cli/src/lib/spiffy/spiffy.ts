@@ -1,4 +1,4 @@
-import * as t from '@withgraphite/retype';
+import * as t from '../retype';
 import fs from 'fs-extra';
 import os from 'os';
 import path from 'path';
