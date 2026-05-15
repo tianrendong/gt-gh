@@ -33,35 +33,34 @@ const args = {
     default: false,
   },
   cli: {
-    describe:
-      'No-op compatibility flag; Graphite edits PR metadata in the CLI.',
+    describe: 'No-op compatibility flag; this CLI edits PR metadata locally.',
     type: 'boolean',
     default: false,
   },
   web: {
     describe:
-      'Graphite web PR metadata editing is not supported by this GitHub-only CLI.',
+      'Graphite-hosted web PR metadata editing is not supported by this GitHub-only CLI.',
     type: 'boolean',
     default: false,
     alias: 'w',
   },
   'edit-title': {
-    describe: 'Use --edit in Graphite.',
+    describe: 'Use --edit in this CLI.',
     type: 'boolean',
     default: false,
   },
   'edit-description': {
-    describe: 'Use --edit in Graphite.',
+    describe: 'Use --edit in this CLI.',
     type: 'boolean',
     default: false,
   },
   'no-edit-title': {
-    describe: 'Use --no-edit in Graphite.',
+    describe: 'Use --no-edit in this CLI.',
     type: 'boolean',
     default: false,
   },
   'no-edit-description': {
-    describe: 'Use --no-edit in Graphite.',
+    describe: 'Use --no-edit in this CLI.',
     type: 'boolean',
     default: false,
   },
@@ -122,11 +121,13 @@ export const handler = async (argv: argsT): Promise<void> =>
       );
     }
     if (argv.web) {
-      throw new ExitFailedError('Graphite does not support gt submit --web.');
+      throw new ExitFailedError(
+        'This GitHub-only CLI does not support gt submit --web.'
+      );
     }
     if (argv.comment) {
       throw new ExitFailedError(
-        'Graphite does not support gt submit --comment.'
+        'This GitHub-only CLI does not support gt submit --comment.'
       );
     }
     if (argv['merge-when-ready']) {
@@ -136,12 +137,12 @@ export const handler = async (argv: argsT): Promise<void> =>
     }
     if (argv['rerequest-review']) {
       throw new ExitFailedError(
-        'Graphite does not support gt submit --rerequest-review.'
+        'This GitHub-only CLI does not support gt submit --rerequest-review.'
       );
     }
     if (argv['target-trunk']) {
       throw new ExitFailedError(
-        'Graphite does not support gt submit --target-trunk.'
+        'This GitHub-only CLI does not support gt submit --target-trunk.'
       );
     }
 

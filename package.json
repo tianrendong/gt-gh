@@ -4,10 +4,10 @@
   "workspaces": {
     "packages": [
       "./apps/cli",
-      "./libs/gti-cli-shared-types"
+      "./libs/cli-shared-types"
     ]
   },
-  "packageManager": "yarn@3.3.1",
+  "packageManager": "yarn@3.2.1",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",

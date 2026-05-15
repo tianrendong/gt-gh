@@ -40,7 +40,7 @@ const args = {
     alias: 'i',
   },
   update: {
-    describe: `Stage updates to tracked files before creating the branch. Currently treated like --all in Graphite.`,
+    describe: `Stage updates to tracked files before creating the branch. Currently treated like --all by this CLI.`,
     demandOption: false,
     default: false,
     type: 'boolean',
@@ -65,7 +65,7 @@ const args = {
     type: 'boolean',
   },
   verbose: {
-    describe: `Show commit diff in editor. Not currently supported by Graphite.`,
+    describe: `Show commit diff in editor. Not currently supported by this CLI.`,
     demandOption: false,
     count: true,
     alias: 'v',
@@ -89,7 +89,7 @@ export const handler = async (argv: argsT): Promise<void> =>
     }
     if (argv.verbose) {
       throw new ExitFailedError(
-        'Graphite does not support gt create --verbose.'
+        'This GitHub-only CLI does not support gt create --verbose.'
       );
     }
 

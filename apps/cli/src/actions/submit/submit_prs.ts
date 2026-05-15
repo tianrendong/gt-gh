@@ -90,7 +90,7 @@ async function requestServerToSubmitPR({
   const request = submissionInfo[0];
 
   try {
-    const response = await submitPrToGithub({
+    const response = await submitPrToGitHub({
       request,
     });
 
@@ -110,7 +110,7 @@ async function requestServerToSubmitPR({
   }
 }
 
-async function submitPrToGithub({
+async function submitPrToGitHub({
   request,
 }: {
   request: TSubmittedPRRequest;

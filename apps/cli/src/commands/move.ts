@@ -8,14 +8,14 @@ import { graphite } from '../lib/runner';
 const args = {
   all: {
     describe:
-      'Show branches across all configured trunks in interactive selection. this CLI supports one trunk.',
+      'Show branches across all configured trunks in interactive selection. This CLI supports one trunk.',
     type: 'boolean',
     default: false,
     alias: 'a',
   },
   only: {
     describe:
-      'Only move this branch. Not supported by Graphite; descendants are restacked.',
+      'Only move this branch. Not supported by this CLI; descendants are restacked.',
     type: 'boolean',
     default: false,
   },
@@ -42,7 +42,9 @@ export const builder = args;
 export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {
     if (argv.only) {
-      throw new ExitFailedError('Graphite does not support gt move --only.');
+      throw new ExitFailedError(
+        'This GitHub-only CLI does not support gt move --only.'
+      );
     }
 
     const originalBranch = argv.source

@@ -347,9 +347,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gt-gh/cli-shared-types@workspace:libs/gti-cli-shared-types":
+"@gt-gh/cli-shared-types@workspace:libs/cli-shared-types":
   version: 0.0.0-use.local
-  resolution: "@gt-gh/cli-shared-types@workspace:libs/gti-cli-shared-types"
+  resolution: "@gt-gh/cli-shared-types@workspace:libs/cli-shared-types"
   dependencies:
     typescript: ^4.6.4
   languageName: unknown

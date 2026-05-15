@@ -2,43 +2,44 @@ name: Pull request CI
 
 on:
   pull_request:
-    types: [
-        # Default pull_request trigger types.
-        opened,
-        synchronize,
-        reopened,
-      ]
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
   lint_and_fast_tests:
-    name: 'Run CLI tests'
+    name: "Run CLI tests"
     runs-on: ubuntu-latest
     steps:
-      # Basic setup
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
-          clean: 'false'
+          clean: "false"
           fetch-depth: 0
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Enable Corepack
+        run: corepack enable
       - name: Install
-        run: yarn install --immutable
+        run: corepack yarn install --immutable
       - name: Lint
-        run: yarn workspace gt-gh run lint
+        run: corepack yarn workspace gt-gh run lint
       - name: Build
-        run: yarn turbo run build
+        run: corepack yarn turbo run build
       - name: Setup git
         run: git config --global user.email "test@gmail.com" && git config --global user.name "test"
       - name: Git Version
         run: git --version
       - name: Test
-        run: yarn workspace gt-gh run test-ci
+        run: corepack yarn workspace gt-gh run test-ci
 
   superlinter:
-    name: 'Run superlinter'
+    name: "Run superlinter"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0

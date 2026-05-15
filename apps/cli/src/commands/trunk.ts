@@ -9,7 +9,7 @@ const args = {
     default: false,
   },
   all: {
-    describe: 'Show all configured trunks. this CLI supports one trunk.',
+    describe: 'Show all configured trunks. This CLI supports one trunk.',
     type: 'boolean',
     default: false,
     alias: 'a',

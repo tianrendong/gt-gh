@@ -30,7 +30,7 @@ const args = {
   },
   stat: {
     describe:
-      'Show a diffstat instead of a full diff. Not currently supported by Graphite.',
+      'Show a diffstat instead of a full diff. Not currently supported by this CLI.',
     default: false,
     type: 'boolean',
     alias: 's',

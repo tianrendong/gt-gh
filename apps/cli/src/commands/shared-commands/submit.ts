@@ -90,7 +90,7 @@ export const args = {
   },
   always: {
     describe:
-      'Always push updates, even if the branch has not changed. Can be helpful for fixing an inconsistent Graphite stack view on Web/GitHub resulting from downtime/a bug.',
+      'Always push updates, even if the branch has not changed. Can be helpful for fixing inconsistent remote stack state after downtime or a bug.',
     type: 'boolean',
     default: false,
   },

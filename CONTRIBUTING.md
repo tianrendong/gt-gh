@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions are welcome! Please first open an issue so that we can discuss before opening a PR. I have limited bandwidth to maintain this project so please bear with me if responses and reviews are slow.
+Contributions are welcome! Please first open an issue so that we can discuss before opening a PR. Please include context, reproduction steps, and tests when possible.
 
 ## Getting Started
 
@@ -10,81 +10,75 @@ Contributions are welcome! Please first open an issue so that we can discuss bef
 nvm use
 ```
 
-You'll need to install yarn on your machine
+Enable Corepack so the repo uses its pinned Yarn version
 
 ```
-npm install --global yarn
-```
-
-You'll also need to install turbo
-
-```
-npm install --global turbo
+corepack enable
 ```
 
 Build the monorepo
 
 ```
-yarn install
-turbo run build
+corepack yarn install
+corepack yarn turbo run build
 ```
 
 Build the CLI
 
 ```
 cd apps/cli
-yarn install
-yarn build
+corepack yarn install
+corepack yarn build
 ```
 
 ## Running Tests
 
 ```
 cd apps/cli
-DEBUG=1 yarn test --full-trace
+DEBUG=1 corepack yarn test --full-trace
 ```
 
 Running a subset of tests
 
 ```
 cd apps/cli
-DEBUG=1 yarn test --full-trace -g "test pattern"
+DEBUG=1 corepack yarn test --full-trace -g "test pattern"
 ```
 
 Running one test
 
 ```
 cd apps/cli
-DEBUG=1 yarn test-one "<path to .js test file in dist folder>"
+DEBUG=1 corepack yarn test-one "<path to .js test file in dist folder>"
 ```
 
 ## Run CLI from Local Build
 
 ```
 cd apps/cli
-yarn cli <command> # (to run `gt <command>`)
+corepack yarn cli <command> # (to run `gt <command>`)
 ```
 
 Linking `gt` to a locally built version (includes a build)
 
 ```
 cd apps/cli
-yarn dev
+corepack yarn dev
 # then to run commands:
 gt <command>
 ```
 
-## Generating the MacOS ARM Binary
+## Generating the macOS ARM Binary
 
-Due to limitations with GitHub Actions, we need to manually generate the MacOS ARM binary for a release.
+Due to limitations with GitHub Actions, we need to manually generate the macOS ARM binary for a release.
 
-From the cli app directory:
+From the CLI app directory:
 
 ```
-yarn build-pkg -t node18-macos -o gt-macos-arm64
+corepack yarn build-pkg -t node18-macos -o gt-macos-arm64
 ```
 
-## Getting Hashes for the Homebrew Tap
+## Getting Release Binary Hashes
 
 Download all 3 binaries and then run:
 

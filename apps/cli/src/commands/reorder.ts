@@ -6,7 +6,7 @@ import { graphite } from '../lib/runner';
 const args = {
   stack: {
     describe:
-      'Include every upstack branch through the tip. Not supported by Graphite reorder.',
+      'Include every upstack branch through the tip. Not supported by this CLI reorder.',
     type: 'boolean',
     default: false,
   },
@@ -24,7 +24,7 @@ export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {
     if (argv.stack) {
       throw new ExitFailedError(
-        'Graphite does not support gt reorder --stack.'
+        'This GitHub-only CLI does not support gt reorder --stack.'
       );
     }
     await editDownstack(undefined, context);

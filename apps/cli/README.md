@@ -27,4 +27,4 @@ gt submit --stack
 
 - PR operations use the GitHub CLI (`gh`), not Graphite APIs.
 - Authenticate GitHub first with `gh auth login` or `gt auth`.
-- Graphite-platform-only features such as AI metadata and merge-when-ready are not supported.
+- Graphite cloud features such as AI metadata and merge-when-ready are not supported.

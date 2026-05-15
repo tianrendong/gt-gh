@@ -32,7 +32,7 @@ void yargs(getYargsInput())
   .commandDir('commands')
   .help()
   .usage(
-    'Graphite is a command line tool that makes working with stacked changes fast & intuitive.\n\nhttps://docs.graphite.dev/guides/graphite-cli'
+    'Graphite is a command line tool that makes working with stacked changes fast & intuitive.\n\nhttps://github.com/tianrendong/gt-gh'
   )
   .options(globalArgumentsOptions)
   .global(Object.keys(globalArgumentsOptions))

@@ -52,7 +52,7 @@ async function handleUntrackedLocally(
     [
       `${chalk.yellow(
         branchName
-      )} shares a name with a local branch that not tracked by Graphite.`,
+      )} shares a name with a local branch that is not tracked by Graphite.`,
       `In order to sync it, you must overwrite your local copy of the branch.`,
       `If you do not wish to overwrite your copy, the command will be aborted.`,
     ].join('\n')

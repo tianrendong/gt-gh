@@ -18,7 +18,7 @@ const args = {
   },
   'delete-all': {
     describe:
-      'Delete merged or closed branches during get. Not separately configurable in Graphite.',
+      'Delete merged or closed branches during get. Not separately configurable in this CLI.',
     type: 'boolean',
     default: false,
   },
@@ -41,13 +41,13 @@ const args = {
   },
   unfrozen: {
     describe:
-      'Checkout new branches as unfrozen. Graphite has no freeze support.',
+      'Checkout new branches as unfrozen. This CLI has no freeze support.',
     type: 'boolean',
     default: false,
     alias: 'U',
   },
   'remote-upstack': {
-    describe: 'Include upstack PRs when fetching. Not supported by Graphite.',
+    describe: 'Include upstack PRs when fetching. Not supported by this CLI.',
     type: 'boolean',
     default: false,
     alias: 'u',

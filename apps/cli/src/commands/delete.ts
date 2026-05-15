@@ -14,13 +14,13 @@ const args = {
   },
   close: {
     describe:
-      'Close associated pull requests on GitHub. Not supported by Graphite delete.',
+      'Close associated pull requests on GitHub. Not supported by this CLI delete.',
     type: 'boolean',
     default: false,
     alias: 'c',
   },
   downstack: {
-    describe: 'Also delete ancestors. Not supported by Graphite delete.',
+    describe: 'Also delete ancestors. Not supported by this CLI delete.',
     type: 'boolean',
     default: false,
   },
@@ -31,7 +31,7 @@ const args = {
     default: false,
   },
   upstack: {
-    describe: 'Also delete children. Not supported by Graphite delete.',
+    describe: 'Also delete children. Not supported by this CLI delete.',
     type: 'boolean',
     default: false,
   },
@@ -48,11 +48,13 @@ export const builder = args;
 export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {
     if (argv.close) {
-      throw new ExitFailedError('Graphite does not support gt delete --close.');
+      throw new ExitFailedError(
+        'This GitHub-only CLI does not support gt delete --close.'
+      );
     }
     if (argv.downstack || argv.upstack) {
       throw new ExitFailedError(
-        'Graphite does not support gt delete --downstack or --upstack.'
+        'This GitHub-only CLI does not support gt delete --downstack or --upstack.'
       );
     }
     const branchName = argv.name ?? context.engine.currentBranchPrecondition;

@@ -12,7 +12,7 @@ const args = {
   },
   all: {
     describe:
-      'Show branches across all configured trunks. this CLI supports one trunk; accepted as no-op.',
+      'Show branches across all configured trunks. This CLI supports one trunk; accepted as no-op.',
     type: 'boolean',
     default: false,
     alias: 'a',
@@ -24,7 +24,7 @@ const args = {
   },
   stack: {
     describe:
-      'Only show current stack in interactive selection. Not currently filtered by Graphite.',
+      'Only show current stack in interactive selection. Not currently filtered by this CLI.',
     type: 'boolean',
     default: false,
     alias: 's',
