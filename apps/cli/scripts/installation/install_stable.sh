@@ -1,3 +1,3 @@
 #!/bin/bash
 
-npm i -g gt-gh
+npm install -g gt-gh
