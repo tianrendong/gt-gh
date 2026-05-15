@@ -16,7 +16,7 @@ type argsT = yargs.Arguments<yargs.InferredOptionTypes<typeof args>>;
 export const command = 'abort';
 export const canonical = 'abort';
 export const description =
-  'Abort the current Charcoal command halted by a rebase conflict.';
+  'Abort the current Graphite command halted by a rebase conflict.';
 export const builder = args;
 export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {

@@ -25,7 +25,7 @@ export const aliases = ['dl'];
 export const command = 'delete [name]';
 export const canonical = 'branch delete';
 export const description =
-  'Delete a branch and its corresponding Charcoal metadata.';
+  'Delete a branch and its corresponding Graphite metadata.';
 export const builder = args;
 export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) =>

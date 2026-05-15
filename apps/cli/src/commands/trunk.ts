@@ -4,12 +4,12 @@ import { graphite } from '../lib/runner';
 const args = {
   add: {
     describe:
-      'Add an additional trunk. Multiple trunks are not supported by Charcoal.',
+      'Add an additional trunk. Multiple trunks are not supported by Graphite.',
     type: 'boolean',
     default: false,
   },
   all: {
-    describe: 'Show all configured trunks. Charcoal has one trunk.',
+    describe: 'Show all configured trunks. Graphite has one trunk.',
     type: 'boolean',
     default: false,
     alias: 'a',

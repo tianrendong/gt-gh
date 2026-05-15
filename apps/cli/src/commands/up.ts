@@ -12,7 +12,7 @@ const args = {
   },
   to: {
     describe:
-      'Target branch to navigate towards. Not currently used by Charcoal.',
+      'Target branch to navigate towards. Not currently used by Graphite.',
     demandOption: false,
     type: 'string',
   },

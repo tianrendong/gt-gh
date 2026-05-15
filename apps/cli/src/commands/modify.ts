@@ -34,7 +34,7 @@ const args = {
     type: 'boolean',
   },
   into: {
-    describe: `The branch to modify instead of the current branch. Not currently supported by Charcoal.`,
+    describe: `The branch to modify instead of the current branch. Not currently supported by Graphite.`,
     demandOption: false,
     type: 'string',
   },
@@ -52,20 +52,20 @@ const args = {
     alias: 'p',
   },
   'reset-author': {
-    describe: `Set the author of the commit to the current user if amending. Not currently supported by Charcoal.`,
+    describe: `Set the author of the commit to the current user if amending. Not currently supported by Graphite.`,
     demandOption: false,
     default: false,
     type: 'boolean',
   },
   update: {
-    describe: `Stage updates to tracked files before committing. Currently treated like --all in Charcoal.`,
+    describe: `Stage updates to tracked files before committing. Currently treated like --all in Graphite.`,
     demandOption: false,
     default: false,
     type: 'boolean',
     alias: 'u',
   },
   verbose: {
-    describe: `Show commit diff in editor. Not currently supported by Charcoal.`,
+    describe: `Show commit diff in editor. Not currently supported by Graphite.`,
     demandOption: false,
     count: true,
     alias: 'v',
@@ -83,16 +83,16 @@ export const builder = args;
 export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {
     if (argv.into) {
-      throw new ExitFailedError('Charcoal does not support gt modify --into.');
+      throw new ExitFailedError('Graphite does not support gt modify --into.');
     }
     if (argv['reset-author']) {
       throw new ExitFailedError(
-        'Charcoal does not support gt modify --reset-author.'
+        'Graphite does not support gt modify --reset-author.'
       );
     }
     if (argv.verbose) {
       throw new ExitFailedError(
-        'Charcoal does not support gt modify --verbose.'
+        'Graphite does not support gt modify --verbose.'
       );
     }
     if (argv['interactive-rebase']) {

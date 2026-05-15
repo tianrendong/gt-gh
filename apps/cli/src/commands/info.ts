@@ -30,7 +30,7 @@ const args = {
   },
   stat: {
     describe:
-      'Show a diffstat instead of a full diff. Not currently supported by Charcoal.',
+      'Show a diffstat instead of a full diff. Not currently supported by Graphite.',
     default: false,
     type: 'boolean',
     alias: 's',

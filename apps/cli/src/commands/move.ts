@@ -8,14 +8,14 @@ import { graphite } from '../lib/runner';
 const args = {
   all: {
     describe:
-      'Show branches across all configured trunks in interactive selection. Charcoal has one trunk.',
+      'Show branches across all configured trunks in interactive selection. Graphite has one trunk.',
     type: 'boolean',
     default: false,
     alias: 'a',
   },
   only: {
     describe:
-      'Only move this branch. Not supported by Charcoal; descendants are restacked.',
+      'Only move this branch. Not supported by Graphite; descendants are restacked.',
     type: 'boolean',
     default: false,
   },
@@ -42,7 +42,7 @@ export const builder = args;
 export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {
     if (argv.only) {
-      throw new ExitFailedError('Charcoal does not support gt move --only.');
+      throw new ExitFailedError('Graphite does not support gt move --only.');
     }
 
     const originalBranch = argv.source

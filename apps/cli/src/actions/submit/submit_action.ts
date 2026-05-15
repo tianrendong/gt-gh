@@ -72,7 +72,7 @@ export async function submitAction(
 
   context.splog.info(
     chalk.blueBright(
-      `🥞 Validating that this Charcoal stack is ready to submit...`
+      `🥞 Validating that this Graphite stack is ready to submit...`
     )
   );
   context.splog.newline();

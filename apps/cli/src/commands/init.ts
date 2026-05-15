@@ -21,7 +21,7 @@ type argsT = yargs.Arguments<yargs.InferredOptionTypes<typeof args>>;
 export const command = 'init';
 export const canonical = 'init';
 export const description =
-  'Initialize Charcoal in this repository by selecting a trunk branch.';
+  'Initialize Graphite in this repository by selecting a trunk branch.';
 export const builder = args;
 export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) =>

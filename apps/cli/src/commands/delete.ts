@@ -14,13 +14,13 @@ const args = {
   },
   close: {
     describe:
-      'Close associated pull requests on GitHub. Not supported by Charcoal delete.',
+      'Close associated pull requests on GitHub. Not supported by Graphite delete.',
     type: 'boolean',
     default: false,
     alias: 'c',
   },
   downstack: {
-    describe: 'Also delete ancestors. Not supported by Charcoal delete.',
+    describe: 'Also delete ancestors. Not supported by Graphite delete.',
     type: 'boolean',
     default: false,
   },
@@ -31,7 +31,7 @@ const args = {
     default: false,
   },
   upstack: {
-    describe: 'Also delete children. Not supported by Charcoal delete.',
+    describe: 'Also delete children. Not supported by Graphite delete.',
     type: 'boolean',
     default: false,
   },
@@ -42,17 +42,17 @@ type argsT = yargs.Arguments<yargs.InferredOptionTypes<typeof args>>;
 export const command = 'delete [name]';
 export const canonical = 'delete';
 export const description =
-  'Delete a branch and its corresponding Charcoal metadata.';
+  'Delete a branch and its corresponding Graphite metadata.';
 export const builder = args;
 
 export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {
     if (argv.close) {
-      throw new ExitFailedError('Charcoal does not support gt delete --close.');
+      throw new ExitFailedError('Graphite does not support gt delete --close.');
     }
     if (argv.downstack || argv.upstack) {
       throw new ExitFailedError(
-        'Charcoal does not support gt delete --downstack or --upstack.'
+        'Graphite does not support gt delete --downstack or --upstack.'
       );
     }
     const branchName = argv.name ?? context.engine.currentBranchPrecondition;

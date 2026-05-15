@@ -12,7 +12,7 @@ const args = {
   },
   stack: {
     describe:
-      'Open the stack page. Charcoal opens the GitHub PR page for the branch.',
+      'Open the stack page. Graphite opens the GitHub PR page for the branch.',
     type: 'boolean',
     default: false,
   },

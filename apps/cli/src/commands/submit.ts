@@ -22,53 +22,53 @@ const args = {
   },
   ai: {
     describe:
-      'Graphite AI PR metadata generation is not supported by Charcoal.',
+      'Graphite AI PR metadata generation is not supported by Graphite.',
     type: 'boolean',
     default: false,
   },
   'no-ai': {
-    describe: 'No-op compatibility flag; Charcoal never uses Graphite AI.',
+    describe: 'No-op compatibility flag; Graphite never uses Graphite AI.',
     type: 'boolean',
     default: false,
   },
   cli: {
     describe:
-      'No-op compatibility flag; Charcoal edits PR metadata in the CLI.',
+      'No-op compatibility flag; Graphite edits PR metadata in the CLI.',
     type: 'boolean',
     default: false,
   },
   web: {
-    describe: 'Graphite web PR metadata editing is not supported by Charcoal.',
+    describe: 'Graphite web PR metadata editing is not supported by Graphite.',
     type: 'boolean',
     default: false,
     alias: 'w',
   },
   'edit-title': {
-    describe: 'Use --edit in Charcoal.',
+    describe: 'Use --edit in Graphite.',
     type: 'boolean',
     default: false,
   },
   'edit-description': {
-    describe: 'Use --edit in Charcoal.',
+    describe: 'Use --edit in Graphite.',
     type: 'boolean',
     default: false,
   },
   'no-edit-title': {
-    describe: 'Use --no-edit in Charcoal.',
+    describe: 'Use --no-edit in Graphite.',
     type: 'boolean',
     default: false,
   },
   'no-edit-description': {
-    describe: 'Use --no-edit in Charcoal.',
+    describe: 'Use --no-edit in Graphite.',
     type: 'boolean',
     default: false,
   },
   comment: {
-    describe: 'Adding submit comments is not supported by Charcoal.',
+    describe: 'Adding submit comments is not supported by Graphite.',
     type: 'string',
   },
   'merge-when-ready': {
-    describe: 'Graphite merge-when-ready is not supported by Charcoal.',
+    describe: 'Graphite merge-when-ready is not supported by Graphite.',
     type: 'boolean',
     default: false,
     alias: 'm',
@@ -79,18 +79,18 @@ const args = {
     alias: 't',
   },
   'rerequest-review': {
-    describe: 'Rerequesting reviews is not supported by Charcoal.',
+    describe: 'Rerequesting reviews is not supported by Graphite.',
     type: 'boolean',
     default: false,
   },
   restack: {
     describe:
-      'Restack branches before submitting. Charcoal already validates stack state.',
+      'Restack branches before submitting. Graphite already validates stack state.',
     type: 'boolean',
     default: false,
   },
   'target-trunk': {
-    describe: 'Multiple target trunks are not supported by Charcoal.',
+    describe: 'Multiple target trunks are not supported by Graphite.',
     type: 'string',
   },
   'ignore-out-of-sync-trunk': {
@@ -113,30 +113,30 @@ export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {
     if (argv.ai) {
       throw new ExitFailedError(
-        'Charcoal does not support Graphite AI PR metadata generation.'
+        'Graphite does not support Graphite AI PR metadata generation.'
       );
     }
     if (argv.web) {
-      throw new ExitFailedError('Charcoal does not support gt submit --web.');
+      throw new ExitFailedError('Graphite does not support gt submit --web.');
     }
     if (argv.comment) {
       throw new ExitFailedError(
-        'Charcoal does not support gt submit --comment.'
+        'Graphite does not support gt submit --comment.'
       );
     }
     if (argv['merge-when-ready']) {
       throw new ExitFailedError(
-        'Charcoal does not support Graphite merge-when-ready.'
+        'Graphite does not support Graphite merge-when-ready.'
       );
     }
     if (argv['rerequest-review']) {
       throw new ExitFailedError(
-        'Charcoal does not support gt submit --rerequest-review.'
+        'Graphite does not support gt submit --rerequest-review.'
       );
     }
     if (argv['target-trunk']) {
       throw new ExitFailedError(
-        'Charcoal does not support gt submit --target-trunk.'
+        'Graphite does not support gt submit --target-trunk.'
       );
     }
 

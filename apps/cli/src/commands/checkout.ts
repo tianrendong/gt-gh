@@ -12,7 +12,7 @@ const args = {
   },
   all: {
     describe:
-      'Show branches across all configured trunks. Charcoal has one trunk; accepted as no-op.',
+      'Show branches across all configured trunks. Graphite has one trunk; accepted as no-op.',
     type: 'boolean',
     default: false,
     alias: 'a',
@@ -24,7 +24,7 @@ const args = {
   },
   stack: {
     describe:
-      'Only show current stack in interactive selection. Not currently filtered by Charcoal.',
+      'Only show current stack in interactive selection. Not currently filtered by Graphite.',
     type: 'boolean',
     default: false,
     alias: 's',

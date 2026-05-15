@@ -1583,29 +1583,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"charcoal@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "charcoal@workspace:."
-  dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.47.0
-    "@typescript-eslint/parser": ^5.47.0
-    "@yarnpkg/sdks": ^3.0.0-rc.34
-    eslint: ^8.30.0
-    eslint-config-prettier: ^8.5.0
-    eslint-import-resolver-typescript: 3.6.1
-    eslint-plugin-import: ^2.26.0
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-simple-import-sort: ^8.0.0
-    husky: ^8.0.1
-    nyc: ^15.1.0
-    prettier: ^2.8.1
-    pretty-quick: ^3.1.3
-    ts-mocha: ^10.0.0
-    turbo: ^1.10.7
-    typescript: ^4.9.4
-  languageName: unknown
-  linkType: soft
-
 "check-error@npm:^1.0.2":
   version: 1.0.2
   resolution: "check-error@npm:1.0.2"
@@ -2964,6 +2941,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"graphite@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "graphite@workspace:."
+  dependencies:
+    "@typescript-eslint/eslint-plugin": ^5.47.0
+    "@typescript-eslint/parser": ^5.47.0
+    "@yarnpkg/sdks": ^3.0.0-rc.34
+    eslint: ^8.30.0
+    eslint-config-prettier: ^8.5.0
+    eslint-import-resolver-typescript: 3.6.1
+    eslint-plugin-import: ^2.26.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-simple-import-sort: ^8.0.0
+    husky: ^8.0.1
+    nyc: ^15.1.0
+    prettier: ^2.8.1
+    pretty-quick: ^3.1.3
+    ts-mocha: ^10.0.0
+    turbo: ^1.10.7
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
 "gt-gh@workspace:apps/cli":
   version: 0.0.0-use.local
   resolution: "gt-gh@workspace:apps/cli"
@@ -3005,7 +3005,6 @@ __metadata:
     yargs: ^17.5.1
   bin:
     gt: dist/src/index.js
-    gt-gh: dist/src/index.js
   languageName: unknown
   linkType: soft
 

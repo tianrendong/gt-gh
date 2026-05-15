@@ -29,7 +29,7 @@ type argsT = yargs.Arguments<yargs.InferredOptionTypes<typeof args>>;
 export const command = 'track [branch]';
 export const canonical = 'track';
 export const description =
-  'Start tracking the current or provided branch with Charcoal by selecting its parent.';
+  'Start tracking the current or provided branch with Graphite by selecting its parent.';
 export const builder = args;
 export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) =>

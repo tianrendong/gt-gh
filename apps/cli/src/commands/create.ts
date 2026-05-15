@@ -40,7 +40,7 @@ const args = {
     alias: 'i',
   },
   update: {
-    describe: `Stage updates to tracked files before creating the branch. Currently treated like --all in Charcoal.`,
+    describe: `Stage updates to tracked files before creating the branch. Currently treated like --all in Graphite.`,
     demandOption: false,
     default: false,
     type: 'boolean',
@@ -53,19 +53,19 @@ const args = {
     alias: 'o',
   },
   ai: {
-    describe: `Graphite AI branch/message generation is not supported by Charcoal.`,
+    describe: `Graphite AI branch/message generation is not supported by Graphite.`,
     demandOption: false,
     default: false,
     type: 'boolean',
   },
   'no-ai': {
-    describe: `No-op compatibility flag; Charcoal never uses Graphite AI.`,
+    describe: `No-op compatibility flag; Graphite never uses Graphite AI.`,
     demandOption: false,
     default: false,
     type: 'boolean',
   },
   verbose: {
-    describe: `Show commit diff in editor. Not currently supported by Charcoal.`,
+    describe: `Show commit diff in editor. Not currently supported by Graphite.`,
     demandOption: false,
     count: true,
     alias: 'v',
@@ -84,12 +84,12 @@ export const handler = async (argv: argsT): Promise<void> =>
   graphite(argv, canonical, async (context) => {
     if (argv.ai) {
       throw new ExitFailedError(
-        'Charcoal does not support Graphite AI branch/message generation. Use --message or omit --ai.'
+        'Graphite does not support Graphite AI branch/message generation. Use --message or omit --ai.'
       );
     }
     if (argv.verbose) {
       throw new ExitFailedError(
-        'Charcoal does not support gt create --verbose.'
+        'Graphite does not support gt create --verbose.'
       );
     }
 

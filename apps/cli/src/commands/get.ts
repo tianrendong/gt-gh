@@ -18,12 +18,12 @@ const args = {
   },
   'delete-all': {
     describe:
-      'Delete merged or closed branches during get. Not separately configurable in Charcoal.',
+      'Delete merged or closed branches during get. Not separately configurable in Graphite.',
     type: 'boolean',
     default: false,
   },
   downstack: {
-    describe: `Don't sync upstack branches. Charcoal get is downstack-only.`,
+    describe: `Don't sync upstack branches. Graphite get is downstack-only.`,
     type: 'boolean',
     default: false,
     alias: 'd',
@@ -41,13 +41,13 @@ const args = {
   },
   unfrozen: {
     describe:
-      'Checkout new branches as unfrozen. Charcoal has no freeze support.',
+      'Checkout new branches as unfrozen. Graphite has no freeze support.',
     type: 'boolean',
     default: false,
     alias: 'U',
   },
   'remote-upstack': {
-    describe: 'Include upstack PRs when fetching. Not supported by Charcoal.',
+    describe: 'Include upstack PRs when fetching. Not supported by Graphite.',
     type: 'boolean',
     default: false,
     alias: 'u',
